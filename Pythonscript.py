@@ -6,10 +6,7 @@
 #salary: Employee's monthly salary.
 #Initialize the dictionary with some sample employee data for testing (e.g., {101: {'name': 'Satya', 'age': 27, 'department': 'HR', 'salary': 50000}}).
 
-employees = {
-    101: {"Name": "Satya", "Age": 27, "Department": "HR", "Salary": 50000},
-    102: {"Name": "John", "Age": 30, "Department": "IT", "Salary": 60000}
-}
+employees = {}
 
 
 #step 3- Add Employee function

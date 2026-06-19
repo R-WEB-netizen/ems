@@ -1,23 +1,23 @@
 #step 1- Plan the data storage.
 
-
 employees = {}
 
 
 #step 3- Add Employee function
 def add_Employee(employees):
-    emp_id = input("Enter employee ID: ")
+    emp_id = int(input("Enter employee ID: "))
     name = input("Enter employee name: ")
     age = int(input("Enter employee age: "))
     department = input("Enter employee department: ")
     salary = float(input("Enter employee salary: "))
-    
+    #Prevent duplicate employee IDs
     if emp_id in employees:
         print("Employee already exists!")
     else:
         employees[emp_id] = {"Name": name, "Age": age, "Department": department, "Salary": salary}
         print("Employee added successfully!")
-#Step 4 - View All Employees
+#Step 4 - View All Employees in a table-like structure
+#Display all employees stored in the dictionary.
 
 def view_all_employees(employees):
     if len(employees) == 0:
@@ -36,10 +36,10 @@ def view_all_employees(employees):
                 details["Salary"]
             ))   
 
-#Step 5 - Search for an Employee by ID
+#Step 5 - Search  an Employee by ID
 
 def search_employee(employees):
-    emp_id = input("Enter employee ID to search: ")
+    emp_id = int(input("Enter employee ID to search: "))
     if emp_id in employees:
         details = employees[emp_id]
         print(f"Employee found:")
@@ -53,36 +53,40 @@ def search_employee(employees):
 #Step 6 - Exit the Program
 
 def exit_program():
-    print("Thank you for using the Employee Management System. Goodbye!")
+    print("Thank you for using the EMS. Goodbye!")
     exit()
 #step 2- define the menu system
 def display_menu():
-    print("1.Add Employee")
+    print("\n1.Add Employee")
     print("2.View All Employee")
     print("3.Search for Employee")
     print("4.Exit")
 
+#main loop to run the program
 while(True):
     display_menu()
-
-    choice = int(input("choose the option:"))
+    try:
+        choice = int(input("choose the option: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        continue
 
     if choice == 1:
-        print("you choose:",add_Employee(employees))
+        add_Employee(employees)
 
     elif choice == 2:
-           print("you choose:",view_all_employees(employees))
+           view_all_employees(employees)
 
     elif choice == 3:
-         print("you choose:",search_employee(employees))
+         search_employee(employees)
 
 
     elif choice == 4:
-        print("exit")
         exit_program()
+        
 
     else:
-        print("choose the correct option")
+        print("Invalid option. Please choose 1-4.")
 
-ems = employees()
-print(ems)
+
+

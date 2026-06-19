@@ -1,10 +1,5 @@
 #step 1- Plan the data storage.
-#Step 1 - Plan the Data Storage
-#name: Employee's name.
-#age: Employee's age.
-#department: Employee's department.
-#salary: Employee's monthly salary.
-#Initialize the dictionary with some sample employee data for testing (e.g., {101: {'name': 'Satya', 'age': 27, 'department': 'HR', 'salary': 50000}}).
+
 
 employees = {}
 
@@ -23,10 +18,7 @@ def add_Employee(employees):
         employees[emp_id] = {"Name": name, "Age": age, "Department": department, "Salary": salary}
         print("Employee added successfully!")
 #Step 4 - View All Employees
-#Display all employees stored in the dictionary.
-#Format the display in a table-like structure, showing employee details (ID, name, age, department, salary).
-#If there are no employees in the system, display a message like:
-#"No employees available."
+
 def view_all_employees(employees):
     if len(employees) == 0:
         print("No employees available.")
@@ -45,11 +37,7 @@ def view_all_employees(employees):
             ))   
 
 #Step 5 - Search for an Employee by ID
-#Prompt the User to enter the emp_id they want to search for.
-#Search the Dictionary:
-#If the employee exists, display their details (name, age, department, salary).
-#If the employee does not exist, display a message like:
-#"Employee not found."
+
 def search_employee(employees):
     emp_id = input("Enter employee ID to search: ")
     if emp_id in employees:
@@ -63,8 +51,7 @@ def search_employee(employees):
     else:
         print("Employee not found.")
 #Step 6 - Exit the Program
-#Add an Exit option in the menu.
-#If the user chooses Exit, display a thank-you message and exit the program.
+
 def exit_program():
     print("Thank you for using the Employee Management System. Goodbye!")
     exit()
